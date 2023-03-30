@@ -11,7 +11,7 @@ namespace HikingProblem
     public:
         Person(double s);
         double get_hike_speed();
-        set_hike_speed(double speed);
+        void set_hike_speed(double speed);
     };
 
 }

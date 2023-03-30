@@ -6,7 +6,7 @@ namespace HikingProblem
     {
         for (double s : speeds)
         {
-            additional_hikers.push_back(new Person(s));
+            additional_hikers.push_back(std::make_shared<Person>(s));
         }
     }
 

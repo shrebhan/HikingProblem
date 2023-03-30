@@ -7,33 +7,33 @@ namespace HikingProblem
   {
     for (double s : speeds)
     {
-      primary_hikers.push_back(new Person(s));
+      primary_hikers.push_back(std::make_shared<Person>(s));
     }
     bridges.push_back(std::make_shared<Bridge>(100, std::vector<double>{}));
     bridges.push_back(std::make_shared<Bridge>(250, std::vector<double>{2.5}));
     bridges.push_back(std::make_shared<Bridge>(150, std::vector<double>{25, 15}));
   }
 
-  std::vector < std::shared_ptr<Person> Hike::get_primary_hikers(){
+  std::vector < std::shared_ptr<Person>> Hike::get_primary_hikers(){
     return primary_hikers;
   }
-  std::vector < std::shared_ptr<Bridge> Hike::get_bridges(){
+  std::vector < std::shared_ptr<Bridge>> Hike::get_bridges(){
     return bridges;
   }
 
   double Hike::get_fastest_bridge_crossing_time(int bridge_num)
   {
-    int b_len = bridges[bridge_num]->length;
+    int b_len = bridges[bridge_num]->get_length();
     std::vector<double> hiker_times;
     for (auto p : primary_hikers)
     {
-      hiker_times.push_back((double)b_len / p->hike_speed);
+      hiker_times.push_back((double)b_len / p->get_hike_speed());
     }
 
-    int additional_hiker_cnt = bridges[bridge_num]->additional_hikers.size();
+    int additional_hiker_cnt = bridges[bridge_num]->get_additional_hikers().size();
     if (additional_hiker_cnt > 0)
     {
-      for (auto ah : bridges[bridge_num]->additional_hikers)
+      for (auto ah : bridges[bridge_num]->get_additional_hikers())
       {
         double temp_speed = ah->hike_speed;
         hiker_times.push_back((double)b_len / temp_speed);

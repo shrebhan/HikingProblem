@@ -8,7 +8,7 @@ namespace HikingProblem
     {
         return this->hike_speed;
     }
-    Person::set_hike_speed(double new_speed)
+    void Person::set_hike_speed(double new_speed)
     {
         this->hike_speed = new_speed;
     }
