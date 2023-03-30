@@ -10,9 +10,9 @@ namespace HikingProblem
     {
       primary_hikers.push_back(std::make_shared<Person>(s));
     }
-    bridges.push_back(std::make_shared<Bridge>(100, std::vector<double>{}));
-    bridges.push_back(std::make_shared<Bridge>(250, std::vector<double>{2.5}));
-    bridges.push_back(std::make_shared<Bridge>(150, std::vector<double>{25, 15}));
+    // bridges.push_back(std::make_shared<Bridge>(100, std::vector<double>{}));
+    // bridges.push_back(std::make_shared<Bridge>(250, std::vector<double>{2.5}));
+    // bridges.push_back(std::make_shared<Bridge>(150, std::vector<double>{25, 15}));
   }
 
   std::vector < std::shared_ptr<Person>> Hike::get_primary_hikers(){
