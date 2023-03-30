@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
         int tid = data["id"].as<int>();
         std::vector<double> cross_speed = data["speeds"].as<std::vector<double>>();
         int count = cross_speed.size();
-        unique_ptr<Hike> hike(std::move(cross_speed));
+        auto hike = make_unique<Person>(cross_speed);
 
         for (auto bd : data["bridge_data"])
         {
