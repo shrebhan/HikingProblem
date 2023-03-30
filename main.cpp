@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
         for (auto bd : data["bridge_data"])
         {
-          hike->get_bridges().push_back(std::make_shared<Bridge>(bd["length"].as<double>(), bd["add_hiker_speed"].as<std::vector<double>>()));
+          hike->add_bridges(std::make_shared<Bridge>(bd["length"].as<double>(), bd["add_hiker_speed"].as<std::vector<double>>()));
         }
         std::cout<<"bridge 0: "<<hike->get_fastest_bridge_crossing_time(0)<<std::endl;
         std::cout<<"bridge 1: "<<hike->get_fastest_bridge_crossing_time(1)<<std::endl;
