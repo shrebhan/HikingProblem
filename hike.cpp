@@ -1,4 +1,5 @@
 #include "hike.h"
+#include <algorithm>
 
 namespace HikingProblem
 {
