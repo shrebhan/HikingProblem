@@ -36,7 +36,7 @@ namespace HikingProblem
     {
       for (auto ah : bridges[bridge_num]->get_additional_hikers())
       {
-        double temp_speed = ah->hike_speed;
+        double temp_speed = ah->get_hike_speed();
         hiker_times.push_back((double)b_len / temp_speed);
       }
     }
