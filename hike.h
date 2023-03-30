@@ -19,7 +19,7 @@ namespace HikingProblem
         std::vector<std::shared_ptr<Person>> get_primary_hikers();
         void set_primary_hikers(std::vector<std::shared_ptr<Person>>);
         std::vector<std::shared_ptr<Bridge>> get_bridges();
-        void add_bridges(std::vector<std::shared_ptr<Bridge>>);
+        void add_bridges(std::shared_ptr<Bridge>);
         double get_fastest_bridge_crossing_time(int bridge_num);
         double get_total_bridge_crossing_time();
     };

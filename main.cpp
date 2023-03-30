@@ -27,12 +27,14 @@ int main(int argc, char *argv[])
         int tid = data["id"].as<int>();
         std::vector<double> cross_speed = data["speeds"].as<std::vector<double>>();
         int count = cross_speed.size();
-        auto hike = make_unique<Person>(cross_speed);
+        auto hike = make_unique<Hike>(cross_speed);
 
         for (auto bd : data["bridge_data"])
         {
           hike->add_bridges(std::make_shared<Bridge>(bd["length"].as<double>(), bd["add_hiker_speed"].as<std::vector<double>>()));
         }
+
+        //testing
         std::cout<<"bridge 0: "<<hike->get_fastest_bridge_crossing_time(0)<<std::endl;
         std::cout<<"bridge 1: "<<hike->get_fastest_bridge_crossing_time(1)<<std::endl;
         std::cout<<"bridge 2: "<<hike->get_fastest_bridge_crossing_time(2)<<std::endl;
