@@ -8,5 +8,6 @@ test:
         add_hiker_speed : [2.5]
       - length : 150
         add_hiker_speed : [25, 15]
+    answer: 191.5
          
     
