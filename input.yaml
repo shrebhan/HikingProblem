@@ -1,0 +1,12 @@
+test:
+    id : 1
+    speeds: [100, 50, 20, 10]
+    bridge_crossing:
+      - length : 100
+        add_hiker_speed : []
+      - length : 250
+        add_hiker_speed : [2.5]
+      - length : 150
+        add_hiker_speed : [25, 15]
+         
+    
