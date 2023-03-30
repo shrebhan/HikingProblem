@@ -19,7 +19,7 @@ namespace HikingProblem
     return bridges;
   }
 
-  void Hike::add_bridges(std::shared_ptr<Bridge>) {
+  void Hike::add_bridges(std::shared_ptr<Bridge> brdg) {
     bridges.push_back(brdg);
   }
 
