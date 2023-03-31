@@ -59,13 +59,13 @@ int main(int argc, char *argv[])
     std::cout << "all bridges : " << hike->get_total_bridge_crossing_time() << std::endl;
 
     /*       test - 2        */
-    std::cout<<"test -1"<<std::endl;
+    std::cout<<"test -2"<<std::endl;
     auto hike2 = make_unique<Hike>(cross_speed);
 
     // three bridges
-    hike2->add_bridges(std::make_shared<Bridge>(200, std::vector<double>{})); // only primary hikers
-    hike2->add_bridges(std::make_shared<Bridge>(0, std::vector<double>{20, 20}));
-    hike2->add_bridges(std::make_shared<Bridge>(150, std::vector<double>{25}));
+    hike2->add_bridges(std::make_shared<Bridge>(200, std::vector<double>{10})); // only primary hikers
+    hike2->add_bridges(std::make_shared<Bridge>(120, std::vector<double>{20, 20}));
+    hike2->add_bridges(std::make_shared<Bridge>(0, std::vector<double>{25})); // error
 
     // testing single bridge
     std::cout << "bridge 0: " << hike2->get_fastest_bridge_crossing_time(0) << std::endl;
