@@ -9,5 +9,17 @@ test:
       - length : 150
         add_hiker_speed : [25, 15]
     answer: 191.5
+
+test:
+    id : 2
+    speeds: [100, 50, 20, 10]
+    bridge_crossing:
+      - length : 200
+        add_hiker_speed : [10]
+      - length : 120
+        add_hiker_speed : [20, 20]
+      - length : 0
+        add_hiker_speed : [25]
+    answer: error
          
     
