@@ -60,7 +60,6 @@ int main(int argc, char *argv[])
 
     /*       test - 2        */
     std::cout<<"test -1"<<std::endl;
-    std::vector<double> cross_speed{10, 50, 30};
     auto hike = make_unique<Hike>(cross_speed);
 
     // three bridges
