@@ -4,11 +4,10 @@
 #include <vector>
 #include "person.h"
 #include "bridge.h"
-# include <memory>
+#include <memory>
 
 namespace HikingProblem
 {
-
     class Hike
     {
         std::vector<std::shared_ptr<Person>> primary_hikers;
@@ -23,7 +22,6 @@ namespace HikingProblem
         double get_fastest_bridge_crossing_time(int bridge_num);
         double get_total_bridge_crossing_time();
     };
-
 }
 
 #endif

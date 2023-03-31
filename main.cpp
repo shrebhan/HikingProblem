@@ -40,14 +40,15 @@ int main(int argc, char *argv[])
       }
     }
     // hardcoding input
-
+    /*       test - 1        */
+    std::cout<<"test -1"<<std::endl;
     std::vector<double> cross_speed{100, 50, 20, 10};
     auto hike = make_unique<Hike>(cross_speed);
 
     // three bridges
     hike->add_bridges(std::make_shared<Bridge>(100, std::vector<double>{})); // only primary hikers
-    hike->add_bridges(std::make_shared<Bridge>(100, std::vector<double>{2.5}));
-    hike->add_bridges(std::make_shared<Bridge>(100, std::vector<double>{25, 15}));
+    hike->add_bridges(std::make_shared<Bridge>(250, std::vector<double>{2.5}));
+    hike->add_bridges(std::make_shared<Bridge>(150, std::vector<double>{25, 15}));
 
     // testing single bridge
     std::cout << "bridge 0: " << hike->get_fastest_bridge_crossing_time(0) << std::endl;
@@ -55,6 +56,27 @@ int main(int argc, char *argv[])
     std::cout << "bridge 2: " << hike->get_fastest_bridge_crossing_time(2) << std::endl;
 
     // testing aggregate time of bridges
+    std::cout << "all bridges : " << hike->get_total_bridge_crossing_time() << std::endl;
+
+    /*       test - 2        */
+    std::cout<<"test -1"<<std::endl;
+    std::vector<double> cross_speed{10, 50, 30};
+    auto hike = make_unique<Hike>(cross_speed);
+
+    // three bridges
+    hike->add_bridges(std::make_shared<Bridge>(200, std::vector<double>{})); // only primary hikers
+    hike->add_bridges(std::make_shared<Bridge>(0, std::vector<double>{20, 20}));
+    hike->add_bridges(std::make_shared<Bridge>(150, std::vector<double>{25}));
+
+    // testing single bridge
+    std::cout << "bridge 0: " << hike->get_fastest_bridge_crossing_time(0) << std::endl;
+    std::cout << "bridge 1: " << hike->get_fastest_bridge_crossing_time(1) << std::endl;
+    std::cout << "bridge 2: " << hike->get_fastest_bridge_crossing_time(2) << std::endl;
+
+    // testing aggregate time of bridges
+    std::cout << "all bridges : " << hike->get_total_bridge_crossing_time() << std::endl;
+
+
   }
   catch (...)
   {

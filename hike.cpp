@@ -1,5 +1,6 @@
 #include "hike.h"
 #include <algorithm>
+#include <stdexcept>
 
 namespace HikingProblem
 {
@@ -12,20 +13,26 @@ namespace HikingProblem
     }
   }
 
-  std::vector < std::shared_ptr<Person>> Hike::get_primary_hikers(){
+  std::vector<std::shared_ptr<Person>> Hike::get_primary_hikers()
+  {
     return primary_hikers;
   }
-  std::vector < std::shared_ptr<Bridge>> Hike::get_bridges(){
+  std::vector<std::shared_ptr<Bridge>> Hike::get_bridges()
+  {
     return bridges;
   }
 
-  void Hike::add_bridges(std::shared_ptr<Bridge> brdg) {
+  void Hike::add_bridges(std::shared_ptr<Bridge> brdg)
+  {
     bridges.push_back(brdg);
   }
 
   double Hike::get_fastest_bridge_crossing_time(int bridge_num)
   {
     int b_len = bridges[bridge_num]->get_length();
+    if (b_len <= 0)
+      throw std::invalid_argument("bridge length cannot be zero");
+
     std::vector<double> hiker_times;
     for (auto p : primary_hikers)
     {
