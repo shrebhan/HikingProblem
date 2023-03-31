@@ -60,20 +60,20 @@ int main(int argc, char *argv[])
 
     /*       test - 2        */
     std::cout<<"test -1"<<std::endl;
-    auto hike = make_unique<Hike>(cross_speed);
+    auto hike2 = make_unique<Hike>(cross_speed);
 
     // three bridges
-    hike->add_bridges(std::make_shared<Bridge>(200, std::vector<double>{})); // only primary hikers
-    hike->add_bridges(std::make_shared<Bridge>(0, std::vector<double>{20, 20}));
-    hike->add_bridges(std::make_shared<Bridge>(150, std::vector<double>{25}));
+    hike2->add_bridges(std::make_shared<Bridge>(200, std::vector<double>{})); // only primary hikers
+    hike2->add_bridges(std::make_shared<Bridge>(0, std::vector<double>{20, 20}));
+    hike2->add_bridges(std::make_shared<Bridge>(150, std::vector<double>{25}));
 
     // testing single bridge
-    std::cout << "bridge 0: " << hike->get_fastest_bridge_crossing_time(0) << std::endl;
-    std::cout << "bridge 1: " << hike->get_fastest_bridge_crossing_time(1) << std::endl;
-    std::cout << "bridge 2: " << hike->get_fastest_bridge_crossing_time(2) << std::endl;
+    std::cout << "bridge 0: " << hike2->get_fastest_bridge_crossing_time(0) << std::endl;
+    std::cout << "bridge 1: " << hike2->get_fastest_bridge_crossing_time(1) << std::endl;
+    std::cout << "bridge 2: " << hike2->get_fastest_bridge_crossing_time(2) << std::endl;
 
     // testing aggregate time of bridges
-    std::cout << "all bridges : " << hike->get_total_bridge_crossing_time() << std::endl;
+    std::cout << "all bridges : " << hike2->get_total_bridge_crossing_time() << std::endl;
 
 
   }
